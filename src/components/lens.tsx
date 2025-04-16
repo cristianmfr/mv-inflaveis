@@ -3,7 +3,6 @@ import { useState } from 'react'
 import { Lens } from './ui/lens'
 import Image from 'next/image'
 import * as motion from 'framer-motion/client'
-import { cn } from '@/lib/utils'
 
 interface LensCardProps {
    imageUrl: string

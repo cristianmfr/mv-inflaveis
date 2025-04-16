@@ -11,7 +11,7 @@ import { AnimatePresence } from 'framer-motion'
 import * as motion from 'framer-motion/client'
 import Image, { ImageProps } from 'next/image'
 import { useOutsideClick } from '@/hooks/use-outside-click'
-import { ArrowLeftIcon, ArrowRightIcon, XIcon } from 'lucide-react'
+import { XIcon } from 'lucide-react'
 
 interface CarouselProps {
    items: React.ReactNode[]

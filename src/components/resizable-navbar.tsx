@@ -4,7 +4,6 @@ import { AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion'
 import * as motion from 'framer-motion/client'
 import Link from 'next/link'
 import React, { useRef, useState } from 'react'
-import Image from 'next/image'
 import { MenuIcon, XIcon } from 'lucide-react'
 
 interface NavbarProps {

@@ -1,8 +1,5 @@
 'use client'
-import { useEffect } from 'react'
-import { stagger, useAnimate } from 'framer-motion'
 import * as motion from 'framer-motion/client'
-import { cn } from '@/lib/utils'
 
 export const TextGenerateEffect = () => {
    return (

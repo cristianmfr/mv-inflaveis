@@ -1,4 +1,3 @@
-import { LensCard } from '@/components/lens'
 import { Contact } from '@/components/templates/contact'
 import { Hero } from '@/components/templates/hero'
 import { Highlight } from '@/components/templates/highlight'
