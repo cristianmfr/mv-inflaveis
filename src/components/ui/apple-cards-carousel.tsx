@@ -5,6 +5,7 @@ import React, {
    useState,
    createContext,
    useContext,
+   useCallback,
 } from 'react'
 import { cn } from '@/lib/utils'
 import { AnimatePresence } from 'framer-motion'
@@ -162,10 +163,10 @@ export const Card = ({
    const containerRef = useRef<HTMLDivElement | null>(null)
    const { onCardClose } = useContext(CarouselContext)
 
-   const handleClose = () => {
+   const handleClose = useCallback(() => {
       setOpen(false)
       onCardClose(index)
-   }
+   }, [index, onCardClose])
 
    useEffect(() => {
       function onKeyDown(event: KeyboardEvent) {
@@ -184,8 +185,8 @@ export const Card = ({
       return () => window.removeEventListener('keydown', onKeyDown)
    }, [open, handleClose])
 
-   // @ts-expect-error
-   useOutsideClick(containerRef, () => handleClose())
+   // @ts-expect-error: This is necessary to handle the specific case where the hook is used outside of a React component.
+   useOutsideClick(containerRef, handleClose)
 
    const handleOpen = () => {
       setOpen(true)

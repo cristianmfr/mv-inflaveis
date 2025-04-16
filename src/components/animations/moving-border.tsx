@@ -28,7 +28,7 @@ export function Button({
    duration?: number
    className?: string
    [key: string]: any
-}) {
+} & React.ComponentPropsWithoutRef<React.ElementType>) {
    return (
       <Component
          className={cn(
@@ -81,7 +81,7 @@ export const MovingBorder = ({
    rx?: string
    ry?: string
    [key: string]: any
-}) => {
+} & React.SVGProps<SVGSVGElement>) => {
    const pathRef = useRef<SVGRectElement>(null)
    const progress = useMotionValue<number>(0)
 
