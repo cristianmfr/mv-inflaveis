@@ -11,7 +11,7 @@ import { AnimatePresence } from 'framer-motion'
 import * as motion from 'framer-motion/client'
 import Image, { ImageProps } from 'next/image'
 import { useOutsideClick } from '@/hooks/use-outside-click'
-import { XIcon } from 'lucide-react'
+import { ArrowLeftIcon, ArrowRightIcon, XIcon } from 'lucide-react'
 
 interface CarouselProps {
    items: React.ReactNode[]
@@ -34,9 +34,9 @@ export const CarouselContext = createContext<{
 })
 
 export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
-   const carouselRef = React.useRef<HTMLDivElement>(null)
-   const [canScrollLeft, setCanScrollLeft] = React.useState(false)
-   const [canScrollRight, setCanScrollRight] = React.useState(true)
+   const carouselRef = useRef<HTMLDivElement>(null)
+   const [canScrollLeft, setCanScrollLeft] = useState(false)
+   const [canScrollRight, setCanScrollRight] = useState(true)
    const [currentIndex, setCurrentIndex] = useState(0)
 
    useEffect(() => {
@@ -129,7 +129,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                   ))}
                </div>
             </div>
-            {/* <div className='flex justify-end gap-2 mr-10'>
+            <div className='flex justify-end gap-2 mr-10'>
                <button
                   className='relative z-40 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50'
                   onClick={scrollLeft}
@@ -144,7 +144,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                >
                   <ArrowRightIcon className='h-6 w-6 text-gray-500' />
                </button>
-            </div> */}
+            </div>
          </div>
       </CarouselContext.Provider>
    )
